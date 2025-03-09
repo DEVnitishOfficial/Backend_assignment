@@ -1,0 +1,52 @@
+ Assignment : Implement the union Function in javascript 
+
+Objective : 
+
+The goal of this assignment is to implement a function union "union" that combines two javascript arrays into a new array that comtains the union of elements from both lists whil preserving order and avoiding duplicates. The function must use ES6 features such as Set, spread operators and recursion where necessary.
+
+Instructions: 
+
+Part 1: implementing the union Function
+
+1. Write a function "union(arr1,arr2)" that takes two arrays as input.
+2.The function should return a new array containing all unique elements from both arr1 and arr2.
+3.Order of elements must be preserved (i.e, first occurance from either array must appear first in the result).
+4. The function must work for :
+  → primitive values (numbers strings, boleans, null , undefiend)
+  → Plain objects ({}) and array ([]) (including nested objects/arrays)
+  → Avoid using JSON.stringify() for object comparison. Instead, implement a deep equality check.
+5. Do not use any third-party libraries.
+
+Part 2: Writing Tests
+
+1. Write test cases using Jest to verify that : 
+  → Primitive values are handled correctly.
+  → Arrays with duplicates values return unique elements in the correct order.
+  → Objects and nested objects are correctly identified as unique or duplicates.
+  → Mixed types are correctly processed.
+
+2. Save you test cases in a union.test.js file and ensure they run using npm test.
+
+Example Cases:
+
+const union = require('./union');
+
+console.log(union([1,2,3],[2,3,4]));
+// output : [1,2,3,4]
+
+console.log(union(['a'],['b']));
+// output: ['a','b']
+
+console.log(union([1],['1',1]));
+// output: [1,'1']
+
+console.log(union([{a:{b:10}}],[{a:{b:20}}]));
+//output: [{a:{b:10}},{a:{b:20}}]
+
+console.log(union([{b:10, c:{z:{t:5, _t:5}, f:[4]}},2],[{b:10,c:{z:{t:5, _t:5}, f:[4]}},'2]));
+
+// output: [{b:10, c:{z:{t:5,_t:5}, f:[4]}},2,'2']
+
+Bonus:
+ → Optimize the function using ES6 features while keeping the implementation clean and redable.
+ → handle edge cases effectively(e.g., empty arrays, deeply nested objects).
