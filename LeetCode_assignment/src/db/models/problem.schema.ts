@@ -28,7 +28,10 @@ const ExampleSchema: Schema = new Schema({
 
 const ProblemSchema: Schema = new Schema(
     {
-        title: { type: String, required: true },
+        title: {
+             type: String, 
+             required: true 
+        },
         difficulty: {
             type: String,
             enum: ["Easy", "Medium", "Hard"],
