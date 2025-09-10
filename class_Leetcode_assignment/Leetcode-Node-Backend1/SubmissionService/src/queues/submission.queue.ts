@@ -8,7 +8,7 @@ export const submissionQueue = new Queue("submission", {
         attempts: 3,
         backoff: {
             type: "exponential",
-            delay: 2000
+            delay: 2000,
         }
     }
 });

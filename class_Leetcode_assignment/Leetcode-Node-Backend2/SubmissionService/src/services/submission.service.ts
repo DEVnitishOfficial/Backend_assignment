@@ -36,6 +36,7 @@ export class SubmissionService implements ISubmissionService {
         }
 
         logger.info("Getting problem by ID", { problemId: submissionData.problemId });
+        
         const problem = await getProblemById(submissionData.problemId);
         if(!problem) {
             throw new NotFoundError("Problem not found or something went wrong");
