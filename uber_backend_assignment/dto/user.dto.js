@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const userCreateSchema = z.object({
+const createUserSchema = z.object({
   userName: z.string({
     required_error: "user name is Required",
   })
@@ -25,6 +25,6 @@ const userCreateSchema = z.object({
 });
 
 
-const userUpdateSchema = userCreateSchema.partial();
+const userUpdateSchema = createUserSchema.partial();
 
-export { userCreateSchema, userUpdateSchema };
+export { createUserSchema, userUpdateSchema };

@@ -1,5 +1,7 @@
-import { Schema } from "mongoose";
-import { serverConfig } from "../config";
+import { Schema, model } from "mongoose";
+import { serverConfig } from "../config/index.js";
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 const userSchema = new Schema(
   {
